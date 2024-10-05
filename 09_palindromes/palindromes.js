@@ -1,13 +1,7 @@
 const palindromes = function (word) {
 
 
-for(let j =0; j<word.length; j++)
-{
-    if(word[j].match(/[a-z]/i)!=true)
-    {
-        word = word.slice(j,0)
-    }    
-}
+word = word.toLowerCase().replace(/[^a-z0-9]/g, "");
 
 let reverse_word = "";
 
