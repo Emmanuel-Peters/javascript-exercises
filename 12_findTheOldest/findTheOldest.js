@@ -1,9 +1,10 @@
 const findTheOldest = function(humans) {
-    
-humans.forEach(person => person.age = person.yearOfDeath - person.yearOfBirth) 
+    const currentYear = new Date().getFullYear();
+humans.forEach(person => person.age = (person.yearOfDeath || currentYear) - person.yearOfBirth) 
 
 let oldest = "";
 let oldest_age = 0;
+let person_return = [];
 
 function age_check(item)
 {
@@ -11,14 +12,14 @@ function age_check(item)
     {
         oldest_age = item.age;
         oldest = item.name;
+        person_return = item;
     }
 }
 
 humans.forEach(age_check)
 
 
-console.log(oldest);
-return(oldest);
+return (person_return);
 
 };
 
